@@ -1,0 +1,190 @@
+# BC-5: Create a Business Network Using Hyperledger
+
+Aim: To create a simple business network using Hyperledger Composer and understand how participants, assets and transactions work.
+
+We will create a simple Product Trading Business Network where a seller can register products and update their ownership.
+
+## 1. Requirements
+
+- Node.js
+- Hyperledger Fabric
+- Hyperledger Composer (legacy academic tool)
+- Visual Studio Code
+
+Note: Hyperledger Composer is deprecated. This practical uses its traditional format because the term Business Network is commonly associated with Hyperledger Composer.
+
+## 2. Business Network Structure
+
+[Modeling a Business Network Using Hyperledger Composer | Hyperledger Cookbook](https://images.openai.com/static-rsc-4/QSvyjt1uSs5hHeY9JYD04rlDcUQJOjb2kq2TMEUl7LpbIzLRCS_8MleMWdLZFUJ1YjRkNGXsOmv1QAlIwT5FV0Ar1W6ESOxfPirPju442YXH063enDt_i3rF6tMF-WAu1fAwtIL_wlVu-GtSJrcEPg_BQWltzb51HUnb7CtAIjw?purpose=inline)
+
+[subscription.packtpub.com](https://subscription.packtpub.com/book/web-development/9781789534887/3/ch03lvl1sec15/the-hyperledger-composer-business-network-and-development-components?utm_source=chatgpt.com)
+
+Our business network contains:
+
+- Participant: Seller
+- Asset: Product
+- Transaction: TransferProduct
+
+## 3. Create the project
+
+Open the terminal and run:
+
+```
+mkdir ProductTrading
+cd ProductTrading
+```
+
+Create the following folder structure:
+
+```
+ProductTrading/
+│
+├── models/
+│   └── product.cto
+│
+├── lib/
+│   └── logic.js
+│
+└── permissions.acl
+```
+
+## 4. Create the model file
+
+Create `models/product.cto`.
+
+This file defines participants, assets and transactions.
+
+```
+namespace org.example.product
+
+participant Seller identified by sellerId {
+    o String sellerId
+    o String name
+}
+
+asset Product identified by productId {
+    o String productId
+    o String productName
+    o Double price
+    --> Seller owner
+}
+
+transaction TransferProduct {
+    --> Product product
+    --> Seller newOwner
+}
+```
+
+## 5. Create the transaction logic
+
+Create `lib/logic.js`.
+
+This file contains the business logic for transferring products.
+
+```
+/**
+ * Transfer product ownership.
+ * @param {org.example.product.TransferProduct} tx
+ * @transaction
+ */
+async function transferProduct(tx) {
+
+    tx.product.owner = tx.newOwner;
+
+    const assetRegistry = await getAssetRegistry(
+        'org.example.product.Product'
+    );
+
+    await assetRegistry.update(tx.product);
+}
+```
+
+## 6. Create permissions file
+
+Create `permissions.acl`.
+
+```
+rule Default {
+    description: "Allow all participants access"
+    participant: "org.hyperledger.composer.system.Participant"
+    operation: ALL
+    resource: "org.example.product.*"
+    action: ALLOW
+}
+
+rule SystemAccess {
+    description: "Allow network administrators"
+    participant: "org.hyperledger.composer.system.NetworkAdmin"
+    operation: ALL
+    resource: "org.example.product.*"
+    action: ALLOW
+}
+```
+
+## 7. Deploy the business network
+
+In the traditional Hyperledger Composer environment, the business network definition is packaged and deployed to Hyperledger Fabric.
+
+Example commands:
+
+```
+composer archive create \
+-t dir \
+-n .
+```
+
+Then deploy the generated `.bna` archive using the Composer deployment tools and a configured Fabric connection profile.
+
+## 8. Test the business network
+
+After deployment, test the following operations:
+
+1. Create a Seller participant.
+2. Create a Product asset.
+3. Assign the product to a seller.
+4. Execute the `TransferProduct` transaction.
+5. Check whether the product owner has changed.
+
+## 9. Expected Output
+
+```
+Business Network Created Successfully!
+
+Participant:
+Seller ID: S001
+Name: Rahul
+
+Product:
+Product ID: P001
+Product Name: Laptop
+Price: 50000
+
+Transaction:
+TransferProduct
+
+Product ownership transferred successfully.
+New Owner: S002
+```
+
+The above is an illustrative expected output. Actual output depends on the deployment environment and test data.
+
+## 10. Result
+
+Successfully designed a Product Trading Business Network using Hyperledger Composer. Defined participants, assets and transactions, and implemented product ownership transfer functionality.
+
+## Viva Questions
+
+| Question                      | Answer                                                                 |
+| ----------------------------- | ---------------------------------------------------------------------- |
+| What is Hyperledger?          | An open-source project for enterprise blockchain technologies.         |
+| What is Hyperledger Fabric?   | A permissioned blockchain framework.                                   |
+| What is Hyperledger Composer? | A legacy tool used to develop business networks on Hyperledger Fabric. |
+| What is a participant?        | An entity that participates in a business network.                     |
+| What is an asset?             | An object or resource managed by the network.                          |
+| What is a transaction?        | An operation that changes the state of the business network.           |
+| What is a `.cto` file?        | A file used to define the business network data model.                 |
+| What is a `.bna` file?        | A Business Network Archive containing the network definition.          |
+| What is an ACL file?          | A file defining access permissions.                                    |
+| What is blockchain?           | A distributed ledger that stores records in connected blocks.          |
+
+Important: This is the traditional Composer practical format, not a ready-to-run modern Fabric project. Composer's deployment tools are discontinued, so an actual deployment requires a compatible legacy environment.

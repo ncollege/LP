@@ -1,0 +1,98 @@
+# BC-2: Create Your Own Wallet Using MetaMask for Crypto Transactions
+
+Aim: To create a personal cryptocurrency wallet using MetaMask and understand how it is used for crypto transactions.
+
+## Step-by-step procedure
+
+### Step 1: Open MetaMask website
+
+[File:MetaMask Fox.svg - Wikimedia Commons](https://images.openai.com/static-rsc-4/2mdrz5lgGOuShO6oVXJ8WUzYaJZa8Lcjy1veyAikCZExwtq2zvlxg1OL0M6LxPnfiBMRIfacOBLtuNIxrO-Bpti1Na27O_Vw0dv_lwzwXZo3MPIUsILrsOWZv5x41G9L2rcNPLZVjN2Eu4wyUkiTueCBm1UtEGGhFOf6F0RYrvc?purpose=inline)
+
+1. Open Google Chrome.
+2. Visit [https://metamask.io](https://metamask.io?utm_source=chatgpt.com).
+3. Click Download.
+4. Select Chrome and install the MetaMask extension.
+
+### Step 2: Create a new wallet
+
+[Setting Up Wallet for Testnet. To interact with any DApp… | by Mabel Oza | Medium](https://images.openai.com/static-rsc-4/3tt_jcALCH3nMSOYHkbGl5saf9mas4yrrwfnl76Y1DYqLWxUmpWVt1-1VnuASW_tHO1gMEZ41dVU5cIhsCqq5scBFfYDxGYXfsNGhr3lhcxnRl7iROdMpPUJqqYV93g8BpgrLZ2eROkvzuCYHX3B8hWRrJi15QvkjXepQgLjPys?purpose=inline)
+
+[mabeloza.medium.com](https://mabeloza.medium.com/setting-up-wallet-for-testnet-36c0ae4ce093?utm_source=chatgpt.com)
+
+1. Open the MetaMask extension.
+2. Click Create a new wallet.
+3. Accept the terms and conditions.
+4. Create a strong password.
+5. Click Create.
+
+### Step 3: Secure your wallet
+
+[To Be Your Own Bank With MetaMask, You Need To Master These Password Best Practices | Consensys](https://images.openai.com/static-rsc-4/VibZCDgr7H125n5t8W702R_FQyB2FF39P_bN5gpN8evlA4GRkhrMyNZpjxlapTrUFVnEvVyayLRRBcx7GHFNAH8rr4EhdN5wNt9JGsJr3IQXbLeW3lFf1DHDH6DfeDCVGVYMZgsAaI9OIxyRH6G2Qz8mrTWKsXiAbzArTIGzz10?purpose=inline)
+
+[consensys.io](https://consensys.io/blog/metamask-secret-seed-phrase-and-password-management?utm_source=chatgpt.com)
+
+1. MetaMask will generate a Secret Recovery Phrase.
+2. Write down the phrase on paper.
+3. Keep it in a safe place.
+4. Verify the phrase as instructed by MetaMask.
+
+Note: Never share your Secret Recovery Phrase or private key with anyone.
+
+### Step 4: View your wallet address
+
+[Modern Crypto Design](https://images.openai.com/static-rsc-4/9OGZIEYZi_cStX8IgwFDoiUPJN22jLc0KqDHu9a11EJ8xQlpYbmR6WU1RbmanOLA4E6xnaCJ59XsP_FDN86UvUnIUPYHxXrXxhUQ2AFJE3VKT_2cm3lAxrbzoaso00-Cw5-l7wfcHnC71RsaVwLQf7KNtzgEgRpw83ebSKzkakg?purpose=inline)
+
+[peiko.space](https://peiko.space/blog/article/cryptocurrency-software-design?utm_source=chatgpt.com)
+
+1. Open your MetaMask wallet.
+2. Click on your account name or address.
+3. Copy your wallet address.
+4. This public address is used to receive cryptocurrency.
+
+### Step 5: Understand wallet features
+
+Explore the following options in MetaMask:
+
+- Account: Displays your wallet account.
+- Receive: Shows your wallet address for receiving crypto.
+- Send: Used to send cryptocurrency.
+- Activity: Displays transaction history.
+- Network: Allows you to select a blockchain network.
+
+### Step 6: Test a crypto transaction
+
+1. Select the Ethereum Sepolia test network.
+2. Get test ETH from a Sepolia faucet.
+3. Open the Send option.
+4. Enter another test wallet address.
+5. Enter a small test amount.
+6. Review the gas fee.
+7. Click Confirm.
+
+### Step 7: Check transaction history
+
+1. Open the Activity section.
+2. Select the completed transaction.
+3. Click View on block explorer.
+4. Check transaction status, amount, wallet addresses and gas fee.
+
+[Sepolia Block Explorer](https://sepolia.etherscan.io/?utm_source=chatgpt.com)
+
+## Result
+
+Successfully created a personal cryptocurrency wallet using MetaMask and studied its features, wallet address, and crypto transaction process.
+
+## Viva questions
+
+| Question                          | Answer                                                         |
+| --------------------------------- | -------------------------------------------------------------- |
+| What is MetaMask?                 | A cryptocurrency wallet.                                       |
+| What is a crypto wallet?          | A wallet used to manage blockchain accounts and crypto assets. |
+| What is a wallet address?         | A public address used to receive cryptocurrency.               |
+| What is a private key?            | A secret key used to authorize transactions.                   |
+| What is a Secret Recovery Phrase? | A phrase used to recover a wallet.                             |
+| What is Ethereum?                 | A blockchain platform.                                         |
+| What is ETH?                      | Ethereum's native cryptocurrency.                              |
+| What is Gas Fee?                  | A fee paid to process blockchain transactions.                 |
+
+Practical tip: Use Sepolia testnet and test ETH for your college practical. You do not need to purchase real cryptocurrency.

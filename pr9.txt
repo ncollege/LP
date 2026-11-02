@@ -1,0 +1,156 @@
+import pandas as pd
+import numpy as np
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+
+
+
+
+
+df = pd.read_csv("sales_data_sample.csv", encoding="latin1")
+
+df.head()
+
+
+
+print("Dataset Shape:", df.shape)
+
+print("\nDataset Columns:")
+print(df.columns)
+
+print("\nDataset Information:")
+print(df.info())
+
+print("\nMissing Values:")
+print(df.isnull().sum())
+
+
+
+
+X = df[[
+    "QUANTITYORDERED",
+    "PRICEEACH",
+    "SALES"
+]]
+
+X.head()
+
+
+
+X = X.fillna(X.median())
+
+print("Missing Values:")
+print(X.isnull().sum())
+
+
+
+
+scaler = StandardScaler()
+
+X_scaled = scaler.fit_transform(X)
+
+print("Data Scaling Completed!")
+
+
+
+
+wcss = []
+
+for i in range(1, 11):
+
+    kmeans = KMeans(
+        n_clusters=i,
+        random_state=42,
+        n_init=10
+    )
+
+    kmeans.fit(X_scaled)
+
+    wcss.append(kmeans.inertia_)
+
+print("WCSS Values:")
+print(wcss)
+
+
+
+
+plt.figure(figsize=(8, 5))
+
+plt.plot(
+    range(1, 11),
+    wcss,
+    marker="o"
+)
+
+plt.title("Elbow Method")
+plt.xlabel("Number of Clusters (K)")
+plt.ylabel("WCSS")
+
+plt.show()
+
+
+
+
+
+kmeans = KMeans(
+    n_clusters=3,
+    random_state=42,
+    n_init=10
+)
+
+y_kmeans = kmeans.fit_predict(X_scaled)
+
+print("Clustering Completed!")
+
+
+
+
+df["Cluster"] = y_kmeans
+
+df.head()
+
+
+
+
+print("Cluster Counts:")
+
+print(df["Cluster"].value_counts().sort_index())
+
+
+
+
+
+plt.figure(figsize=(8, 5))
+
+sns.scatterplot(
+    x=df["QUANTITYORDERED"],
+    y=df["SALES"],
+    hue=df["Cluster"],
+    palette="viridis"
+)
+
+plt.title("K-Means Clustering of Sales Data")
+plt.xlabel("Quantity Ordered")
+plt.ylabel("Sales")
+
+plt.show()
+
+
+
+
+centers = scaler.inverse_transform(kmeans.cluster_centers_)
+
+centers_df = pd.DataFrame(
+    centers,
+    columns=["QUANTITYORDERED", "PRICEEACH", "SALES"]
+)
+
+print("Cluster Centers:")
+print(centers_df)
+
+
+

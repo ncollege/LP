@@ -1,0 +1,88 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+class Item {
+    int weight;
+    int profit;
+    double ratio;
+
+    Item(int weight, int profit) {
+        this.weight = weight;
+        this.profit = profit;
+        this.ratio = (double) profit / weight;
+    }
+}
+
+public class FractionalKnapsack {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of items: ");
+        int n = sc.nextInt();
+
+        Item[] items = new Item[n];
+
+        // Input item details
+        for (int i = 0; i < n; i++) {
+
+            System.out.println("Enter details of Item " + (i + 1));
+
+            System.out.print("Weight: ");
+            int weight = sc.nextInt();
+
+            System.out.print("Profit: ");
+            int profit = sc.nextInt();
+
+            items[i] = new Item(weight, profit);
+        }
+
+        System.out.print("Enter knapsack capacity: ");
+        int capacity = sc.nextInt();
+
+        // Sort items by descending profit/weight ratio
+        Arrays.sort(items, (a, b) ->
+            Double.compare(b.ratio, a.ratio)
+        );
+
+        double totalProfit = 0;
+        int remainingCapacity = capacity;
+
+        // Apply greedy method
+        for (int i = 0; i < n; i++) {
+
+            if (remainingCapacity == 0) {
+                break;
+            }
+
+            if (items[i].weight <= remainingCapacity) {
+
+                // Take the complete item
+                totalProfit += items[i].profit;
+                remainingCapacity -= items[i].weight;
+
+                System.out.println("Taken full item with weight: "
+                                   + items[i].weight);
+
+            } else {
+
+                // Take fractional part of item
+                double fraction =
+                    (double) remainingCapacity / items[i].weight;
+
+                totalProfit += items[i].profit * fraction;
+
+                System.out.println("Taken " +
+                    (fraction * 100) + "% of item with weight: "
+                    + items[i].weight);
+
+                remainingCapacity = 0;
+            }
+        }
+
+        System.out.println("\nMaximum Profit: " + totalProfit);
+
+        sc.close();
+    }
+}

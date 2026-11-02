@@ -1,0 +1,187 @@
+import pandas as pd
+import numpy as np
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.neighbors import KNeighborsClassifier
+
+from sklearn.metrics import (
+    confusion_matrix,
+    accuracy_score,
+    precision_score,
+    recall_score
+)
+
+
+
+
+
+
+df = pd.read_csv("diabetes.csv")
+
+df.head()
+
+
+
+
+print("Dataset Shape:", df.shape)
+
+print("\nDataset Information:")
+print(df.info())
+
+print("\nMissing Values:")
+print(df.isnull().sum())
+
+print("\nDataset Description:")
+print(df.describe())
+
+
+
+
+
+X = df.drop("Outcome", axis=1)
+
+y = df["Outcome"]
+
+print("Input Features:")
+print(X.head())
+
+print("\nTarget:")
+print(y.head())
+
+
+
+
+
+columns = ["Glucose", "BloodPressure", "SkinThickness", "Insulin", "BMI"]
+
+for col in columns:
+    X[col] = X[col].replace(0, np.nan)
+    X[col] = X[col].fillna(X[col].median())
+
+print(X.head())
+
+
+
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y,
+    test_size=0.2,
+    random_state=42,
+    stratify=y
+)
+
+print("Training Data:", X_train.shape)
+print("Testing Data:", X_test.shape)
+
+
+
+
+
+
+scaler = StandardScaler()
+
+X_train = scaler.fit_transform(X_train)
+
+X_test = scaler.transform(X_test)
+
+
+
+knn = KNeighborsClassifier(n_neighbors=5)
+
+knn.fit(X_train, y_train)
+
+print("KNN Model Training Completed!")
+
+
+
+
+y_pred = knn.predict(X_test)
+
+print("Predicted Values:")
+print(y_pred)
+
+print("\nActual Values:")
+print(y_test.values)
+
+
+
+
+cm = confusion_matrix(y_test, y_pred)
+
+print("Confusion Matrix:")
+print(cm)
+
+
+
+
+plt.figure(figsize=(5, 4))
+
+sns.heatmap(
+    cm,
+    annot=True,
+    fmt="d",
+    cmap="Blues"
+)
+
+plt.xlabel("Predicted Values")
+plt.ylabel("Actual Values")
+plt.title("KNN Confusion Matrix")
+
+plt.show()
+
+
+
+
+
+accuracy = accuracy_score(y_test, y_pred)
+
+print("Accuracy:", accuracy)
+print("Accuracy Percentage:", accuracy * 100, "%")
+
+
+
+
+error_rate = 1 - accuracy
+
+print("Error Rate:", error_rate)
+print("Error Rate Percentage:", error_rate * 100, "%")
+
+
+
+
+
+precision = precision_score(y_test, y_pred, zero_division=0)
+
+print("Precision:", precision)
+
+
+
+
+
+
+recall = recall_score(y_test, y_pred, zero_division=0)
+
+print("Recall:", recall)
+
+
+
+print("========== KNN MODEL PERFORMANCE ==========")
+
+print("Confusion Matrix:")
+print(cm)
+
+print("\nAccuracy:", accuracy * 100, "%")
+
+print("Error Rate:", error_rate * 100, "%")
+
+print("Precision:", precision)
+
+print("Recall:", recall)
+
+
+
+

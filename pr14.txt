@@ -1,0 +1,206 @@
+# BC-4: Survey Report on Types of Blockchains and Their Real-Time Use Cases
+
+Aim: To study different types of blockchain technology and understand their real-world applications.
+
+## 1. Introduction
+
+Blockchain is a distributed digital ledger that stores information in blocks connected using cryptography. The data is shared across a network of computers, making it transparent, secure and difficult to modify.
+
+Blockchain technology is used in cryptocurrency, banking, healthcare, supply chain management, digital identity and many other industries.
+
+## 2. Types of Blockchains
+
+### 1. Public Blockchain
+
+[A Beginner’s Guide to Understanding the Blockchain (Part 4: Public VS Private Blockchains) | by Derek Lim | Coinmonks | Medium](https://images.openai.com/static-rsc-4/cj6pPgh_Gb_QjH8FmZmibtpvOe8jzSlDk_wcqP1a0DqMijZjEFRF5pcqM7i0TGPjEzQIl6uUhFOcxHFy5joku6UWx0Ac_lT9kohfqMJ3SpY8vvHdst3l34-L-lshr8j7ZiOrSVv6WYJ-ohQRbqfZegJKf9o4cDf9hHGwW_boslE?purpose=inline)
+
+[medium.com](https://medium.com/coinmonks/a-beginners-guide-to-understanding-the-blockchain-part-4-public-vs-private-blockchains-37ff950ccb47?utm_source=chatgpt.com)
+
+- Open to everyone.
+- Anyone can join the network and participate.
+- Transactions are transparent.
+- Usually decentralized.
+
+Examples: Bitcoin, Ethereum.
+
+Real-time use cases:
+
+- Cryptocurrency transactions.
+- Decentralized applications (DApps).
+- Smart contracts.
+- NFT marketplaces.
+
+### 2. Private Blockchain
+
+[What is Public & Private Blockchain? and Why Companies are using private blockchains today? | by Priyanka Patil | Medium](https://images.openai.com/static-rsc-4/ipCcdV4om7pG9UNchBiTVzB3QXpWN91NPNiCWy1d5QGEbHkwjJnWnCaCdW2MvIQZaaZJI0MOH6vbiJDHQz-hCtxDLqXELqtsUAkd4WpfCKH4LSYA5qFIg9mkbZCpXJhKxiv-AcJcGXGW4dVcxg7_u6ImBwu-9_VsqB4rlj--LLU?purpose=inline)
+
+[priyankapatilbeast.medium.com](https://priyankapatilbeast.medium.com/blockchain-technology-d607642ed8f2?utm_source=chatgpt.com)
+
+- Controlled by a single organization.
+- Only authorized users can access it.
+- Offers privacy and controlled access.
+- Suitable for internal business operations.
+
+Examples: Hyperledger Fabric-based enterprise networks.
+
+Real-time use cases:
+
+- Internal banking records.
+- Company data management.
+- Supply chain tracking.
+- Secure business transactions.
+
+### 3. Consortium Blockchain
+
+[ブロックチェーンとは？～仮想通貨 (ビットコイン) との関係性とあわせてわかりやすく解説～｜be CONNECTED.｜法人のお客さま｜KDDI株式会社](https://images.openai.com/static-rsc-4/JyByijdZhmgFtmXMfk3AHwto6lGzX38EPNYeMmLzDFt0HJnTxtxDbOPjiGjwT5O1WTxFvHLBPY2BKiz1BvtNd9Ol64d24Gk2KN2fAI_BD2EOKA_b44Gn8bFkuqKVoUbq4OdJ7EF-YmcUPm8X9K11OGczkN8hqok3mu2NqPok7Hg?purpose=inline)
+
+[biz.kddi.com](https://biz.kddi.com/beconnected/feature/2021/210303_2/?utm_source=chatgpt.com)
+
+- Managed by multiple organizations.
+- Access is restricted to approved members.
+- Decision-making is shared among participating organizations.
+- Useful when multiple companies need a common network.
+
+Examples: Multi-bank blockchain networks built using Hyperledger Fabric or Corda.
+
+Real-time use cases:
+
+- Interbank transactions.
+- Trade finance.
+- Supply chain management.
+- Sharing records between hospitals or organizations.
+
+### 4. Hybrid Blockchain
+
+[Blockchain Technology and its Types - Analytics Vidhya](https://images.openai.com/static-rsc-4/9fBptFj_3B51ZAg4MG8SgujUWhDiYBzsg70NVc465Sxh0tZJyQp0wUzUhh2nzsojNxqfbAW68-onsSPXDsVUULAL2bLEHA7eIyN7eRMv8j8eP8eL1PWpP_VvOFNKNdPEQXhth-UReoqDXwQImOjl9DuTaM1I-gXz2CDyetOMFaQ?purpose=inline)
+
+[analyticsvidhya.com](https://www.analyticsvidhya.com/blog/2022/09/blockchain-technology-and-its-types/?utm_source=chatgpt.com)
+
+- Combines public and private blockchain features.
+- Some information remains private.
+- Selected information can be made publicly verifiable.
+- Provides a balance between privacy and transparency.
+
+Real-time use cases:
+
+- Healthcare data management.
+- Government records.
+- Supply chain verification.
+- Real estate records.
+
+## 3. Real-world applications of blockchain
+
+[Crypto Revolution: How Digital Currency Is Redefining Money and Power Introduction | WURK Blog](https://images.openai.com/static-rsc-4/kxyC3IbuqETlLX_yeRMqH04fcwJzNvJvKSIXjr7eWSLBYrVlUXTbAtNCfYyofsNxFCAIfUtxBLzM_lOsUCswePm96E4ncwY19px9yMTztKGAZiu_f0bsTz4Xa5Khkm1fknoGFhFokm2rxX2JwdihFtXfSGJn4TrAwyKAIzllWZ4?purpose=inline)
+
+1\. Banking and Finance
+
+Blockchain enables digital payments, cryptocurrency transfers, decentralized finance (DeFi), and faster settlement of financial transactions.
+
+Example: Bitcoin and Ethereum.
+
+[Building Trust in Food Supply Chains with AI, IoT and Blockchain Food Traceability](https://images.openai.com/static-rsc-4/bfSgXnspTxTj1wAzaTrz3q_wqUh5qSesaEoz2cwwG_CexJm1Rtkcsbdnci2SrtHCr3A64hCS-eaTuIc5gTcZBRTr-Uzz9iiJvP5E8OA9k5YMVo2AOfOaEkKhaN2vXwyQ5xJqgK39DbV1h03IFjgQq5ioF2vlCUoWxCO55LFhzH4?purpose=inline)
+
+2\. Supply Chain Management
+
+Blockchain helps track products from manufacturers to customers. It improves transparency and helps verify product origin.
+
+Example: Food traceability and product tracking.
+
+[Patient Health Record Smart Network Challenges and Trends for a Smarter World | MDPI](https://images.openai.com/static-rsc-4/fLy4xbCcAXDGlVWZ6VNyPWPQq0SOMflg7cIvuPCyvBC8aBDcm__HlUkgKXOHhSwtlK7jQwO0SbNB7JNEdPN11OupWHeJIz3vdvB6t7If-nfsBJO7gzT8fag4hkOYtc9OFSwmK-QR38dPT0u5tsz9z026SlIlKKtbb6xBmCSTwLk?purpose=inline)
+
+3\. Healthcare
+
+Blockchain can help authorized healthcare organizations share and verify medical records securely.
+
+Example: Medical record management and health data sharing.
+
+[Blockchain for Digital Identity: DIDs and Verifiable Credential KYC](https://images.openai.com/static-rsc-4/Fyq7dnXUDV4rQzSu3F0bBRboANAJdDDhCmltM5gW_ciy-bKEV3qK3Rs4keSqBQ49BjQl8QYNfNSCYxRw_jvZ0SDLHcwvuPDBCVdP9k2hnEbZaThRIn9-khdAzqQ_Kx9b0QoK6eNMH1GXl6YJurQzh6-AWBxq48h_zifIgMrmG1o?purpose=inline)
+
+4\. Digital Identity
+
+Blockchain can be used to verify digital identities, educational certificates and other credentials.
+
+Example: Verification of university certificates.
+
+[Real Estate Tokenization: Revolutionizing Asset Management and Investment](https://images.openai.com/static-rsc-4/rokZ74rR1v3XQObsT8id4bKqhDYHeG9WYEUQxrCZTIycJvAlwybVnyEC9FIMUuKQJEMbJuBzkHzd6yl10xCmC0UOK3MA6s84jl1Cp4OpcYvSYoAIWYZE7UiVr4AY2-6-PK-LGszDrgmLMnvMa1OtBhlqSbky_xy9Wn14uYg_bR0?purpose=inline)
+
+5\. Real Estate
+
+Blockchain can maintain transparent property transaction records and support tokenization of real-world assets.
+
+Example: Digital property ownership records.
+
+[Smart contracts, Prueba Digital y Firma Electrónicao | Lawgic Academy](https://images.openai.com/static-rsc-4/sTPIrCYoxBCc0MYIZdHPkn3vWS8LntnHJ8q_s5LAcEbI33EZGNZdwczuvUWzR45msfma9eWpAyQ5Eb1jjYoLbmV4oHc6ERdEfzcxuSLMCGqRT8ddwQjU2x718Z8DHIJhOJvm4PWn6F_ncTQrSRBctFXJBqvE_ecdYkj_RWDyLeI?purpose=inline)
+
+6\. Smart Contracts
+
+Smart contracts automatically execute predefined rules when specified conditions are met.
+
+Example: Automated payments, insurance claims and decentralized applications.
+
+[image](https://www.google.com/s2/favicons?domain=https://cardano.org\&sz=32)
+
+Cardano+3
+
+## 4. Comparison of blockchain types
+
+| Feature      | Public        | Private            | Consortium             | Hybrid                     |
+| ------------ | ------------- | ------------------ | ---------------------- | -------------------------- |
+| Access       | Everyone      | Restricted         | Selected organizations | Public and restricted      |
+| Control      | Decentralized | One organization   | Multiple organizations | Combined                   |
+| Transparency | High          | Limited            | Shared with members    | Selective                  |
+| Privacy      | Lower         | High               | High                   | Flexible                   |
+| Example      | Ethereum      | Hyperledger Fabric | Corda-based networks   | Public-private combination |
+
+[image](https://www.google.com/s2/favicons?domain=https://www.blockchain.gov.in\&sz=32)
+
+blockchain.gov.in+2
+
+## 5. Advantages of blockchain
+
+1. Transparency: Transactions can be verified by authorized participants.
+2. Security: Cryptography helps protect transaction records.
+3. Decentralization: Public blockchain networks do not depend on a single central authority.
+4. Traceability: Transactions and asset movements can be tracked.
+5. Immutability: Recorded data is difficult to modify without detection.
+6. Automation: Smart contracts can automate business processes.
+
+## 6. Limitations of blockchain
+
+1. Some blockchain networks have limited transaction speed.
+2. Transaction fees can increase during high network demand.
+3. Private information must be handled carefully.
+4. Blockchain implementation can be expensive and complex.
+5. Lost private keys can result in loss of access to digital assets.
+6. Regulatory requirements may differ across countries.
+
+## 7. Conclusion
+
+Blockchain is an emerging technology that provides secure, transparent and distributed data management. There are four major types of blockchain: Public, Private, Consortium and Hybrid. Each type has different features and applications.
+
+Blockchain is useful in banking, healthcare, supply chain management, digital identity, real estate and many other industries. Selecting the appropriate blockchain depends on the organization's requirements for security, privacy, transparency and access control.
+
+## 8. References
+
+1. [National Informatics Centre – Types of Blockchain](https://www.blockchain.gov.in/Home/BlockChain?blockchain=type\&utm_source=chatgpt.com)
+2. [Hyperledger Fabric – Introduction](https://hyperledger-fabric.readthedocs.io/en/latest/whatis.html?utm_source=chatgpt.com)
+3. [Amazon Web Services – What is Blockchain?](https://aws.amazon.com/what-is/blockchain/?utm_source=chatgpt.com)
+4. [IBM – What is Blockchain?](https://www.ibm.com/think/topics/blockchain?utm_source=chatgpt.com)
+5. [Cardano – Blockchain Use Cases](https://cardano.org/docs/use-cases/?utm_source=chatgpt.com)
+
+## Viva questions
+
+| Question                                      | Answer                                                                           |
+| --------------------------------------------- | -------------------------------------------------------------------------------- |
+| What is blockchain?                           | A distributed digital ledger that stores transactions in blocks.                 |
+| How many major types of blockchain are there? | Four.                                                                            |
+| What is a public blockchain?                  | A blockchain open to everyone.                                                   |
+| What is a private blockchain?                 | A blockchain controlled by one organization.                                     |
+| What is a consortium blockchain?              | A blockchain managed by multiple organizations.                                  |
+| What is a hybrid blockchain?                  | A combination of public and private blockchain features.                         |
+| What is Ethereum?                             | A blockchain platform supporting smart contracts and decentralized applications. |
+| What is Hyperledger Fabric?                   | A permissioned blockchain framework for enterprise applications.                 |
+| What is a smart contract?                     | A program that executes predefined rules on a blockchain.                        |
+| Name two blockchain applications.             | Cryptocurrency and supply chain management.                                      |
+
+Result: Studied the four major types of blockchain technology, compared their features and explored their real-world applications.

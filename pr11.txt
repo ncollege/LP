@@ -1,0 +1,128 @@
+# BC-1: Install MetaMask and Study Spending Ether Per Transaction
+
+Aim: To install MetaMask and understand how much Ether (ETH) is spent per transaction.
+
+## Step-by-step procedure
+
+### Step 1: Install MetaMask
+
+[File:MetaMask Fox.svg - Wikimedia Commons](https://images.openai.com/static-rsc-4/2mdrz5lgGOuShO6oVXJ8WUzYaJZa8Lcjy1veyAikCZExwtq2zvlxg1OL0M6LxPnfiBMRIfacOBLtuNIxrO-Bpti1Na27O_Vw0dv_lwzwXZo3MPIUsILrsOWZv5x41G9L2rcNPLZVjN2Eu4wyUkiTueCBm1UtEGGhFOf6F0RYrvc?purpose=inline)
+
+1. Open Google Chrome.
+2. Visit the official website: [https://metamask.io](https://metamask.io?utm_source=chatgpt.com).
+3. Click Download.
+4. Select Chrome and install the extension.
+
+### Step 2: Create a wallet
+
+[Setting Up Wallet for Testnet. To interact with any DApp… | by Mabel Oza | Medium](https://images.openai.com/static-rsc-4/3tt_jcALCH3nMSOYHkbGl5saf9mas4yrrwfnl76Y1DYqLWxUmpWVt1-1VnuASW_tHO1gMEZ41dVU5cIhsCqq5scBFfYDxGYXfsNGhr3lhcxnRl7iROdMpPUJqqYV93g8BpgrLZ2eROkvzuCYHX3B8hWRrJi15QvkjXepQgLjPys?purpose=inline)
+
+[mabeloza.medium.com](https://mabeloza.medium.com/setting-up-wallet-for-testnet-36c0ae4ce093?utm_source=chatgpt.com)
+
+1. Open the MetaMask extension.
+2. Click Create a new wallet.
+3. Set a strong password.
+4. Securely save your Secret Recovery Phrase offline.
+5. Complete the verification process.
+
+
+
+Important
+
+&#x20;Never share your Secret Recovery Phrase or private key with anyone.
+
+
+
+### Step 3: Select Ethereum network
+
+[What is Sepolia Testnet and How to Get Sepolia ETH From Faucets | CoinGecko](https://images.openai.com/static-rsc-4/7N90US390lphzjevic2NQTbwH42wC3D9vPNCDDsuTWk7df9tyowGDCAKIS9ae0I1_NQ4KRwQxQ8HfAcpzKFWE5D5xZ3-dXKBJy0lYd4GpYum5Fzv63mEq-qEmH7EtbM4tcDOTOQQ3c3bc630FlQvQqJPUxTnuRxlGWIq5bJfFRs?purpose=inline)
+
+[coingecko.com](https://www.coingecko.com/learn/sepolia-eth?utm_source=chatgpt.com)
+
+1. Open MetaMask.
+2. Select the network option.
+3. Choose Ethereum Sepolia Test Network.
+4. If it is not visible, enable test networks in MetaMask settings.
+
+### Step 4: Get test ETH
+
+1. Copy your MetaMask wallet address.
+2. Visit an official Sepolia testnet faucet.
+3. Connect your wallet or paste your address.
+4. Request test ETH.
+5. Wait for the ETH to appear in your wallet.
+
+Test ETH has no real monetary value.
+
+### Step 5: Send test ETH
+
+[加密货币转换为当地法币过程 - 虚拟数字货币信息网](https://images.openai.com/static-rsc-4/0_K7B_4CnUlDugBmyJzOKKIWd5jwTsDzYiEd0hf9sjenC4k6DDdgIooXMgdmObJ18QQ8xiL171_CM35G4XmUQIJfICIGhflPuIV2io1UtguMdWGe7RfA7GY6R27tX1vA4AYhHcqGL7uyBE9ePAwsz1SE_dADW0KHXBhZKA6gy88?purpose=inline)
+
+[wingame168.com](https://www.wingame168.com/currency-trend/3779.html?utm_source=chatgpt.com)
+
+1. Open MetaMask.
+2. Click Send.
+3. Enter another Sepolia test wallet address.
+4. Enter a small amount, for example `0.001 ETH`.
+5. Click Next.
+
+### Step 6: Study transaction fee
+
+[New gas fee management is contradictory - Feature Requests - MetaMask](https://images.openai.com/static-rsc-4/9orUafq2Zoskmw1mh-fBig1Dria5V__VKX0zvxgUrX11_ljkknfcSP4F78jGqSo0GAr5lEnsb9EBCc9TOmDUxNIjQjfF0ZK0Uo5f7HdLq_J6DYeFyvs9VS1UVdaJIhEwfLZfDlihAI5R6_FG9EoASrNtCUGbcJHpZle2OMZSu-E?purpose=inline)
+
+[community.metamask.io](https://community.metamask.io/t/new-gas-fee-management-is-contradictory/25237?utm_source=chatgpt.com)
+
+Before confirming, observe:
+
+- Transaction amount
+- Estimated gas fee
+- Gas limit
+- Gas price
+- Total amount
+
+Click Confirm to complete the test transaction.
+
+### Step 7: Check transaction details
+
+1. Open the transaction activity in MetaMask.
+2. Select your completed transaction.
+3. Click View on block explorer.
+4. Check the transaction details on Sepolia Etherscan.
+
+[Open Sepolia Etherscan](https://sepolia.etherscan.io/?utm_source=chatgpt.com)
+
+## Understanding Ether transaction fees
+
+The transaction fee is calculated as:
+
+\\[ \text{Transaction Fee}=\text{Gas Used}\times\text{Effective Gas Price} \\]
+
+For example:
+
+- Gas used = 21,000
+- Gas price = 10 Gwei
+
+\\[ 21000\times10=210000\text{ Gwei} \\]
+
+\\[ =0.00021\text{ ETH} \\]
+
+This is an illustrative example, not an actual transaction fee.
+
+## Result
+
+MetaMask was installed successfully, a wallet was created, and a test transaction was performed to study Ether transaction fees and gas consumption.
+
+## Viva questions
+
+| Question                                      | Answer                                                                               |
+| --------------------------------------------- | ------------------------------------------------------------------------------------ |
+| What is MetaMask?                             | A cryptocurrency wallet used to interact with Ethereum and other supported networks. |
+| What is Ether?                                | The native cryptocurrency of Ethereum.                                               |
+| What is Gas?                                  | A unit that measures computational work on Ethereum.                                 |
+| What is Gas Fee?                              | The fee paid for processing a transaction.                                           |
+| What is a wallet address?                     | A public address used to send and receive cryptocurrency.                            |
+| What is a Secret Recovery Phrase?             | A set of words used to recover a wallet.                                             |
+| What is Sepolia?                              | An Ethereum test network.                                                            |
+| Does every transaction cost the same gas fee? | No, fees depend on network conditions and transaction complexity.                    |
+
+Practical tip: Perform this experiment on Sepolia testnet only. Never send real ETH for this college practical.
