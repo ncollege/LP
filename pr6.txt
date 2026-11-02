@@ -1,90 +1,145 @@
 import pandas as pd
-from sklearn.compose import ColumnTransformer
-from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
-from sklearn.model_selection import train_test_split
-from sklearn.neural_network import MLPClassifier
-from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
+import numpy as np
+import matplotlib.pyplot as plt
 
-# Read the dataset (change this path if your CSV is stored elsewhere).
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
+
+import tensorflow as tf
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout
+from tensorflow.keras.callbacks import EarlyStopping
+
+
+
+
 df = pd.read_csv("Churn_Modelling.csv")
 
-print("First five rows:")
 print(df.head())
-print("Dataset shape:", df.shape)
-print("\nColumns:", df.columns.tolist())
 
 
 
 
-columns_to_drop = [c for c in ["RowNumber", "CustomerId", "Surname"] if c in df.columns]
+print("Dataset Shape:", df.shape)
 
-X = df.drop(columns=columns_to_drop + ["Exited"])
+print(df.info())
+
+print(df.isnull().sum())
+
+
+
+
+
+X = df.drop(
+    ["RowNumber", "CustomerId", "Surname", "Exited"],
+    axis=1
+)
+
 y = df["Exited"]
 
-print("Feature shape:", X.shape)
-print("Target shape:", y.shape)
-print("\nTarget distribution:")
-print(y.value_counts())
+print(X.head())
+print(y.head())
 
+
+
+
+X = pd.get_dummies(X, columns=["Geography", "Gender"], drop_first=True)
+
+print(X.head())
 
 
 
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y,
-    test_size=0.20,
+    X,
+    y,
+    test_size=0.2,
     random_state=42,
     stratify=y
 )
 
-print("Training records:", X_train.shape[0])
-print("Testing records:", X_test.shape[0])
+print("Training Data:", X_train.shape)
+print("Testing Data:", X_test.shape)
+
+
+
+
+
+scaler = StandardScaler()
+
+X_train = scaler.fit_transform(X_train)
+
+X_test = scaler.transform(X_test)
+
+print("Data Normalization Completed")
 
 
 
 
 
 
-categorical_columns = X.select_dtypes(include=["object", "category"]).columns.tolist()
-numerical_columns = X.select_dtypes(exclude=["object", "category"]).columns.tolist()
+model = Sequential()
 
-preprocessor = ColumnTransformer(
-    transformers=[
-        ("numeric", StandardScaler(), numerical_columns),
-        ("categorical", OneHotEncoder(handle_unknown="ignore"), categorical_columns)
-    ]
+model.add(Dense(16, activation="relu", input_shape=(X_train.shape[1],)))
+
+model.add(Dropout(0.2))
+
+model.add(Dense(8, activation="relu"))
+
+model.add(Dense(1, activation="sigmoid"))
+
+model.summary()
+
+
+
+
+
+
+model.compile(
+    optimizer="adam",
+    loss="binary_crossentropy",
+    metrics=["accuracy"]
 )
 
-print("Numeric columns:", numerical_columns)
-print("Categorical columns:", categorical_columns)
+print("Model Compiled Successfully")
 
 
 
 
 
 
-
-model = Pipeline(
-    steps=[
-        ("preprocessing", preprocessor),
-        ("neural_network", MLPClassifier(
-            hidden_layer_sizes=(64, 32),
-            activation="relu",
-            solver="adam",
-            alpha=0.0001,
-            learning_rate_init=0.001,
-            max_iter=300,
-            early_stopping=True,
-            validation_fraction=0.10,
-            n_iter_no_change=15,
-            random_state=42
-        ))
-    ]
+early_stop = EarlyStopping(
+    monitor="val_loss",
+    patience=5,
+    restore_best_weights=True
 )
 
-model.fit(X_train, y_train)
-print("Model training completed.")
-print("Training iterations:", model.named_steps["neural_network"].n_iter_)
+history = model.fit(
+    X_train,
+    y_train,
+    epochs=50,
+    batch_size=32,
+    validation_split=0.2,
+    callbacks=[early_stop],
+    verbose=1
+)
+
+
+
+
+
+
+
+plt.plot(history.history["accuracy"], label="Training Accuracy")
+
+plt.plot(history.history["val_accuracy"], label="Validation Accuracy")
+
+plt.xlabel("Epochs")
+plt.ylabel("Accuracy")
+plt.title("Model Accuracy")
+
+plt.legend()
+plt.show()
 
 
 
@@ -93,14 +148,57 @@ print("Training iterations:", model.named_steps["neural_network"].n_iter_)
 
 y_pred = model.predict(X_test)
 
+y_pred = (y_pred > 0.5).astype(int)
+
+print("Predictions:")
+print(y_pred[:10].flatten())
+
+
+
+
+
+
 accuracy = accuracy_score(y_test, y_pred)
+
+print("Accuracy:", accuracy)
+
+print("Accuracy Percentage:", accuracy * 100)
+
+
+
+
+
 cm = confusion_matrix(y_test, y_pred)
 
-print("Accuracy: {:.4f} ({:.2f}%)".format(accuracy, accuracy * 100))
-print("\nConfusion Matrix:")
+print("Confusion Matrix:")
 print(cm)
-print("\nClassification Report:")
-print(classification_report(
-    y_test, y_pred,
-    target_names=["Stay (0)", "Leave (1)"]
-))
+
+
+
+
+
+
+plt.figure(figsize=(6, 4))
+
+plt.imshow(cm, cmap="Blues")
+
+plt.title("Confusion Matrix")
+
+plt.xlabel("Predicted Values")
+plt.ylabel("Actual Values")
+
+plt.xticks([0, 1], ["Stay", "Leave"])
+plt.yticks([0, 1], ["Stay", "Leave"])
+
+for i in range(2):
+    for j in range(2):
+        plt.text(j, i, cm[i, j], ha="center", va="center")
+
+plt.colorbar()
+plt.show()
+
+
+
+
+
+print(classification_report(y_test, y_pred))
